@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer", "MusicPlayer\MusicPlayer.csproj", "{F0EDA39E-5604-44C9-81B7-FDFE50E25D4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A3C43CDF-C2BD-4418-B90B-6F71368960C8}"
+	ProjectSection(SolutionItems) = preProject
+		MusicSourse\Yung Lean - Afganistan (Prod. by whitearmor & Yung Gud).mp3 = MusicSourse\Yung Lean - Afganistan (Prod. by whitearmor & Yung Gud).mp3
+		MusicSourse\Yung Lean - Afganistan (Prod. by whitearmor & Yung Gud).wav = MusicSourse\Yung Lean - Afganistan (Prod. by whitearmor & Yung Gud).wav
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0EDA39E-5604-44C9-81B7-FDFE50E25D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0EDA39E-5604-44C9-81B7-FDFE50E25D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0EDA39E-5604-44C9-81B7-FDFE50E25D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0EDA39E-5604-44C9-81B7-FDFE50E25D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11BF9CDB-A8B9-4D2A-9976-EF516AB7E099}
+	EndGlobalSection
+EndGlobal
