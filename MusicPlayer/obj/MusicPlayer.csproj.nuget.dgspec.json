@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayer\\MusicPlayer.csproj": {}
+    "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayerProject\\MusicPlayer\\MusicPlayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayer\\MusicPlayer.csproj": {
+    "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayerProject\\MusicPlayer\\MusicPlayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayer\\MusicPlayer.csproj",
+        "projectUniqueName": "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayerProject\\MusicPlayer\\MusicPlayer.csproj",
         "projectName": "MusicPlayer",
-        "projectPath": "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayer\\MusicPlayer.csproj",
+        "projectPath": "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayerProject\\MusicPlayer\\MusicPlayer.csproj",
         "packagesPath": "C:\\Users\\Serge\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayer\\obj\\",
+        "outputPath": "C:\\Users\\Serge\\source\\repos\\MusicPlayer\\MusicPlayerProject\\MusicPlayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Serge\\AppData\\Roaming\\NuGet\\NuGet.Config",
