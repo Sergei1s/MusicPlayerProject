@@ -1,0 +1,15 @@
+<Style TargetType="ListBox">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ListBoxVisual}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBox">
+                        <Border
+                                    x:Name="Border"
+                                    BorderThickness="4"
+                                    BorderBrush="Gray">
+                                    <Border.Background>LightGray</Border.Background>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>

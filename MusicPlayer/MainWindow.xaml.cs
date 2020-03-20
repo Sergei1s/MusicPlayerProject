@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace MusicPlayer
 {
@@ -23,18 +24,19 @@ namespace MusicPlayer
     /// TODO: The keys isnt working
     public partial class MainWindow : Window
     {
-
+        private const string musicDirrectory = "D:/musicD/";
         public MainWindow()
         {
             InitializeComponent();
             DirectoryInfo directory = new DirectoryInfo("D:/musicD/");//ДИРЕКТОРИЯ С МУЗЫКОЙ
-            
-
+            OpenFileDialog openFileDialog=new OpenFileDialog();
             FileInfo[] files = directory.GetFiles();
             foreach (FileInfo currentfile in files)
             {
-                MusicListBox.Items.Add(currentfile);
-                MusicListBox.Items.Add(MusicListBox.Items.CurrentPosition.ToString());
+                if (currentfile.Extension.ToString() == ".mp3")
+                {
+                    MusicListBox.Items.Add(currentfile.Name);
+                }
             }
         }
         private MediaPlayer player = new MediaPlayer();
@@ -48,53 +50,30 @@ namespace MusicPlayer
         private bool IsFirstTimePlaying;
         private bool IsPaused;
         private bool IsStoped;
-        private bool IsPlayingFromTheList=false;
+        private bool IsPlayingFromTheList = false;
+        private string songAdress;
+        
 
         //START/PAUSE BUTTON//////////
         public void PlayNstopButton_OnClick(object sender, RoutedEventArgs e)
         {
-
-            //if ( IsPlaying==true && IsTheSameSong==true )
-            //{
-            //    player.Pause();
-            //    imageButton.Source = new BitmapImage(new Uri("C:/Users/Serge/source/repos/MusicPlayer/UISource/play_icon.png"));//меняем фотку кнопки на плей
-            //    IsPlaying = false;//флаг паузы
-            //    return;
-            //}
-
-            //if (i == 0)
-            //{
-            //    //(sender as Button).Background = Brushes.Yellow;
-
-            //    //player.Open(new Uri("C:/Users/Serge/source/repos/MusicPlayer/MusicSourse/Yung_Lean_Afganistan.mp3", UriKind.Relative));
-            //    // player.Open(new Uri(MusicListBox.SelectedItem.ToString()));
-            //    //player.Open(new Uri(MusicListBox.SelectedItem.ToString()/*, UriKind.Relative*/));
-            //}
-
-            //if (true)
-            //{
-            //    player.Play();
-            //    imageButton.Source = new BitmapImage(new Uri("C:/Users/Serge/source/repos/MusicPlayer/UISource/pause_icon.png"));//меняем фотку кнопки на паузу
-            //    IsPlaying = true; //ставим флаг проигрыша
-            //}
             if (IsPlayingFromTheList && IsPlaying)
             {
-                imageButton.Source = new BitmapImage(new Uri("C:/Users/Serge/source/repos/MusicPlayer/UISource/pause_icon.png"));//меняем фотку кнопки на паузу
+                ChangeButtonImageToPause();
                 IsPlayingFromTheList = false;
                 return;
             }
 
             if (IsPlayingFromTheList && !IsPlaying)
-            {
-
-                imageButton.Source = new BitmapImage(new Uri("C:/Users/Serge/source/repos/MusicPlayer/UISource/play_icon.png"));//меняем фотку кнопки на плей
+            { 
+                ChangeButtonImageToPlay();//меняем фотку кнопки на плей
                 IsPlayingFromTheList = false;
                 return;
             }
             if (IsPlaying)
             {
                 PauseTheSong();
-                imageButton.Source = new BitmapImage(new Uri("C:/Users/Serge/source/repos/MusicPlayer/UISource/play_icon.png"));//меняем фотку кнопки на плей
+                ChangeButtonImageToPlay();//меняем фотку кнопки на плей
             }
             else
             {
@@ -102,45 +81,33 @@ namespace MusicPlayer
                 {
                     MusicListBox.SelectedIndex = 0;
                 }
-
                 IsTheSameSong = true;
                 PlayTheSong();
-                imageButton.Source = new BitmapImage(new Uri("C:/Users/Serge/source/repos/MusicPlayer/UISource/pause_icon.png"));//меняем фотку кнопки на паузу
+                ChangeButtonImageToPause();
             }
-
-            
-
-           
-
         }
-
-        //private void PlayNstopButton_OnMouseEnter(object sender, MouseEventArgs e)//собыите при наведение мыши на кнопку пуск/пауза (MouseEnter xaml)
-        //{
-        //    (sender as Button).Background = Brushes.Yellow;
-        //}
-
+        private string SongAdress
+        {
+            get
+            {
+                return songAdress = musicDirrectory + MusicListBox.SelectedItem.ToString();
+            }
+        }
         //STOP BUTTON//////////////////
         private void StopButton_OnClick(object sender, RoutedEventArgs e)
         {
             if (IsPlaying || IsPaused)
             {
-                //player.Stop();
-                //player.Close();
-                //i = 0;
-                //IsPlaying = false;
-                //sender = PlayNstopButton;
                 StopTheSong();
-                imageButton.Source = new BitmapImage(new Uri("C:/Users/Serge/source/repos/MusicPlayer/UISource/play_icon.png"));//меняем фотку кнопки на плей
+                ChangeButtonImageToPlay();
                 (sender as Button).Background = Brushes.WhiteSmoke;
             }
         }
-
         private void MusicListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             IsPlayingFromTheList = true;
             keyChecker = MusicListBox.SelectedIndex;
             IsTheSameSong = (keyChecker == key);
-            // MusicListBox.MouseDoubleClick += new MouseButtonEventHandler(PlayNstopButton_OnClick);
             if (IsTheSameSong && IsPlaying)
             {
                 PauseTheSong();
@@ -149,11 +116,9 @@ namespace MusicPlayer
             else
             {
                 PlayTheSong();
-                PlayNstopButton_OnClick(sender,null);
+                PlayNstopButton_OnClick(sender, null);
             }
-
         }
-
         private void MusicListBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
@@ -166,32 +131,41 @@ namespace MusicPlayer
             //sender = PlayNstopButton;
             //MusicListBox.MouseLeftButtonDown += new MouseButtonEventHandler(PlayNstopButton_OnClick);
         }
-
         private void PlayTheSong()
         {
             if (IsPaused == false || !IsTheSameSong)
             {
-                player.Open(new Uri(MusicListBox.SelectedItem.ToString()));
+                player.Open(new Uri(SongAdress));
                 key = MusicListBox.SelectedIndex;
             }
-            
             player.Play();
             IsPlaying = true;
         }
-
         private void PauseTheSong()
         {
             player.Pause();
             IsPlaying = false;
             IsPaused = true;
         }
-
         private void StopTheSong()
         {
             player.Stop();
-            //player.Close();
             IsPlaying = false;
             IsStoped = true;
+        }
+        private void ChangeButtonImageToPause()
+        {
+            imageButton.Source = new BitmapImage(new Uri("/Resources/pause_icon.png", UriKind.Relative));//меняем фотку кнопки на паузу
+        }
+
+        private void ChangeButtonImageToPlay()
+        {
+            imageButton.Source = new BitmapImage(new Uri("/Resources/play_icon.png", UriKind.Relative));
+        }
+
+        private void ChangeButtonImageToStop()
+        {
+            imageButton.Source = new BitmapImage(new Uri("/Resources/stop.png", UriKind.Relative));
         }
     }
 }

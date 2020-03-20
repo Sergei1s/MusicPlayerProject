@@ -1,11 +1,11 @@
-﻿    <Window x:Class="MusicPlayer.MainWindow"
+﻿<Window x:Class="MusicPlayer.MainWindow"
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:local="clr-namespace:MusicPlayer"
             mc:Ignorable="d"
-            Title="MainWindow" Height="642" Width="879" AutomationProperties.AccessKey="">
+            Title="Ka Music PLayer" Height="642" Width="879" AutomationProperties.AccessKey="" Icon="main_icon.png" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="300"></RowDefinition>
@@ -23,7 +23,8 @@
 
 
         <Button x:Name="PlayNstopButton"  Click ="PlayNstopButton_OnClick"  Grid.Column="4" Grid.Row="1" IsDefault="True" IsCancel="True" 
-                 FontSize="36" FontWeight="Bold" Margin="10,60,90,83" Grid.RowSpan="2" Background="White" BorderBrush="#FFB4B4B4" BorderThickness="4,4,4,4">
+                Height="60" Width="150" 
+                FontSize="36" FontWeight="Bold" Margin="10,60,90,83" Grid.RowSpan="2" Background="White" BorderBrush="#FFB4B4B4" BorderThickness="4,4,4,4">
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition>
@@ -47,7 +48,28 @@
                 <Image x:Name="StopButtonImage" Grid.Row="0" Source="Resources/stop.png" Margin="5,0,5,0"></Image>
             </Grid>
         </Button>
-        <ListBox x:Name="MusicListBox" Grid.ColumnSpan="3" Grid.RowSpan="4" Background="LightGray" MouseDoubleClick="MusicListBox_MouseDoubleClick" MouseLeftButtonDown="MusicListBox_MouseLeftButtonDown"/>
+        <ListBox x:Name="MusicListBox" Grid.ColumnSpan="3" Grid.RowSpan="4" Background="LightGray" 
+                FontSize="19" BorderThickness="0" BorderBrush="Gray" MouseDoubleClick="MusicListBox_MouseDoubleClick" MouseLeftButtonDown="MusicListBox_MouseLeftButtonDown">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Margin" Value="2"/>
+                    <Setter Property="ListBoxItem.Padding" Value="3"></Setter>
+                    <Setter Property="BorderThickness" Value="4"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Foreground" Value="#212121"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Padding" Value="8"></Setter>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="4"/>
+                            <Setter Property="BorderBrush" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
 
     </Grid>
 </Window>

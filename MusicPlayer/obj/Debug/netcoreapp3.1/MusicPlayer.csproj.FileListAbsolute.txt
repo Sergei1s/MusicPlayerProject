@@ -23,11 +23,11 @@ C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\bin\Debug
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\bin\Debug\netcoreapp3.1\MusicPlayer.runtimeconfig.dev.json
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\bin\Debug\netcoreapp3.1\MusicPlayer.dll
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\bin\Debug\netcoreapp3.1\MusicPlayer.pdb
-C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MusicPlayer.csprojAssemblyReference.cache
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MusicPlayer_MarkupCompile.cache
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MusicPlayer_MarkupCompile.lref
+C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\App.baml
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MusicPlayer.g.resources
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MusicPlayer.Properties.Resources.resources
@@ -36,3 +36,4 @@ C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MusicPlayer.AssemblyInfo.cs
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MusicPlayer.dll
 C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MusicPlayer.pdb
+C:\Users\Serge\source\repos\MusicPlayer\MusicPlayerProject\MusicPlayer\obj\Debug\netcoreapp3.1\MusicPlayer.csprojAssemblyReference.cache

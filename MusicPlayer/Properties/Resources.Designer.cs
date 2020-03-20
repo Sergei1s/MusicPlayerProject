@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Windows.Media;
+
 namespace MusicPlayer.Properties {
     using System;
     
@@ -22,7 +24,7 @@ namespace MusicPlayer.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +38,7 @@ namespace MusicPlayer.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MusicPlayer.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +53,7 @@ namespace MusicPlayer.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,39 +65,30 @@ namespace MusicPlayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] pause_icon {
+        public static ImageSource pause_icon {
             get {
                 object obj = ResourceManager.GetObject("pause_icon", resourceCulture);
-                return ((byte[])(obj));
+                return obj as ImageSource;
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] play_icon {
+        public static ImageSource play_icon {
             get {
                 object obj = ResourceManager.GetObject("play_icon", resourceCulture);
-                return ((byte[])(obj));
+                return obj as ImageSource;
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] stop {
+        public static ImageSource stop {
             get {
                 object obj = ResourceManager.GetObject("stop", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Yung_Lean__Afganistan {
-            get {
-                return ResourceManager.GetStream("Yung_Lean__Afganistan", resourceCulture);
+                return obj as ImageSource;
             }
         }
     }
